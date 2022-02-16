@@ -1,0 +1,32 @@
+<div class="container">
+  <button class="btn__card" routerLink="/" >Вернуться</button>
+  <h1 class="title__ship">{{nameShip}}</h1>
+  <div class="wrapper__info">
+    <div class="wrap__row">
+      <div>
+        <span class="ship__subtitle">Тип</span>
+        <span class="ship__info">{{ type }}</span>
+      </div>
+      <div>
+        <span class="ship__subtitle">Порт</span>
+        <span class="ship__info">{{ home_port }}</span>
+      </div>
+    </div>
+    <div class="wrap__row">
+      <div>
+        <span class="ship__subtitle">Вес</span>
+        <span class="ship__info">{{ weight_kg }} кг</span>
+      </div>
+      <div>
+        <span class="ship__subtitle">Год</span>
+        <span class="ship__info">{{ year_built }}</span>
+      </div>
+    </div>
+    <div class="mission">
+        <p class="ship__subtitle">Миссии</p>
+        <p class="ship__info">
+            {{mission}}
+        </p>
+    </div>
+  </div>
+</div>

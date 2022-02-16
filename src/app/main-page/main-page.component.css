@@ -1,0 +1,253 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list__ships {
+  width: 1527px;
+  border-right: 1px solid #A5A5A5;
+  padding: 50px 64px;
+}
+
+.ship__item {
+  border-bottom: 1px solid #A5A5A5;
+  margin-top: 40px;
+}
+
+.my-pagination /deep/ .ngx-pagination .current,
+.my-pagination /deep/ .ngx-pagination .pagination-previous,
+.my-pagination /deep/ .ngx-pagination .pagination-next {
+  display: inline-block;
+  margin-top: 52px;
+  background: none;
+  color: black;
+}
+
+.my-pagination /deep/ .ngx-pagination li {
+  display: none;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 64px;
+}
+
+.wrapper__info {
+  display: flex;
+  margin-bottom: 29px;
+  position: relative;
+}
+
+.wrapper__info>div:last-child {
+  position: absolute;
+  left: 453px;
+}
+
+.wrapper__info span:nth-child(odd) {
+  padding-right: 64px;
+}
+
+.ship__name {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.ship__name:after {
+  content: "→";
+  color: #2962FF;
+  margin-left: 23px;
+  font-size: 20px;
+}
+
+.ship__info {
+  color: #2962FF;
+}
+
+
+.search {
+  width: 393px;
+  min-height: 100vh;
+  padding: 50px 32px;
+  background-color: #FFF;
+}
+
+.title__search {
+  margin-bottom: 48px;
+  color: black;
+}
+
+.search__input {
+  position: relative;
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #A5A5A5;
+  margin-bottom: 41px;
+  caret-color: #2962FF;
+}
+.search__input:focus{
+    border-bottom: 1px solid #2962FF;
+}
+.search__input::placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+}
+.subtitle__search {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 5px;
+  display: none;
+}
+.tooltip-hide{
+  position: relative;
+}
+.tooltip{
+  display: block;
+  position: absolute;
+  top:-18px;
+  left: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.dropdown-checkbox {
+  position: relative;
+}
+.tooltip__port{
+  position: absolute;top:-18px;
+  left: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-checkbox .label-title {
+  font-size: 16px;
+  border-bottom: 1px solid #A5A5A5;
+  padding-bottom: 7px;
+}
+
+.dropdown-checkbox .label-title:hover {
+  border-bottom: 1px solid #2962FF;
+}
+
+.dropdown-checkbox ul {
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+  display: none;
+  z-index: 1;
+  border: 1px solid #9c9c9c;
+}
+
+.dropdown-checkbox ul li {
+  font-size: 16px;
+  line-height: 19px;
+  padding: 10px;
+  margin: 0px;
+}
+
+.dropdown-checkbox ul li input {
+  margin-right: 10px;
+}
+
+.dropdown-checkbox:hover ul {
+  display: block;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.dropdown-checkbox:hover {
+  margin-bottom: 150px;
+  
+}
+
+.subtitle__type {
+  margin: 24px 0;
+  font-weight: 700;
+}
+
+.wrap__type>div {
+  margin-bottom: 20px;
+}
+
+.wrap__type>div>input {
+  margin-right: 28px;
+  width: 16px;
+  height: 16px;
+}
+.show{
+  color: red
+}
+
+
+@media screen and (max-width: 1060px) {
+  .wrapper__info>div:last-child {
+    left: 50%;
+  }
+  .wrap__type>div>input {
+    margin-right: 15px;
+  }
+  .search{
+    padding: 50px 15px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .search {
+    min-width: 200px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .wrapper__info span:nth-child(odd){
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper__info{
+    flex-direction: column;
+  }
+  .wrapper__info>div:last-child {
+    position: static;
+  }
+  .wrapper__info>div:first-child{
+    margin-bottom: 20px;
+  }
+  .wrapper__info span:nth-child(odd) {
+    display: inline-block;
+    min-width: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper{
+    flex-direction: column-reverse;
+  }
+  .list__ships {
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid #A5A5A5;
+  }
+  .search {
+    width: 100%;
+    padding: 50px 64px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .search, .list__ships {
+    padding: 30px 24px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .ship__name{
+    font-size: 18px;
+  }
+  .ship__name:after{
+    margin-left: 10px
+  }
+}

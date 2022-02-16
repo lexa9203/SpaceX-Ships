@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="list__ships">
+      <h1 class="title">SpaceX Ships</h1>
+      <div *ngIf="ships">
+        <div class="ship__item" *ngFor="let ship of ships | search:shipName | type:type | port:arrPort | paginate: { itemsPerPage: 5, currentPage: page } ">
+          <span (click)="setValue(ship)" class="ship__name">{{ ship.name }}</span>
+          <div class="wrapper__info">
+            <div>
+              <span>Тип</span>
+              <span class="ship__info">{{ ship.type }}</span>
+            </div>
+            <div>
+              <span>Порт</span>
+              <span class="ship__info">{{ ship.home_port }}</span>
+            </div>
+          </div>
+        </div>
+          <pagination-controls class="my-pagination" previousLabel="" nextLabel="" (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
+
+    <div class="search">
+      <p class="title title__search">Фильтры</p>
+        <div class="tooltip-hide">
+          <div *ngIf="shipName.length > 0" class="tooltip">Название</div>
+          <input [formControl]="nameShipSearch" (input)="defaultPage()" [(ngModel)]="shipName" class="search__input" placeholder="Название" type="text">
+        </div>
+      <div class="dropdown-checkbox">
+        <p *ngIf="arrPort.length === 0" class="label-title">Порт</p>
+        <p *ngIf="arrPort.length > 0" class="tooltip__port">Порт</p>
+        <p *ngIf="arrPort.length > 0" class="label-title">Выбраны {{arrPort.length}}</p>
+        <ul>
+          <li><input type="checkbox" [checked]="portValue[0].selected" (change)="onChangePort($event)" id="one"
+              value="{{portValue[0].port}}"><label for="one">{{portValue[0].port}}</label></li>
+
+          <li><input type="checkbox" [checked]="portValue[1].selected" (change)="onChangePort($event)" id="two"
+              value="{{portValue[1].port}}"><label for="two">{{portValue[1].port}}</label></li>
+
+          <li><input type="checkbox" [checked]="portValue[2].selected" (change)="onChangePort($event)" id="three"
+              value="{{portValue[2].port}}"><label for="three">{{portValue[2].port}}</label></li>
+        </ul>
+      </div>
+      <div class="wrap__type">
+        <p class="subtitle__type">Тип</p>
+        <div>
+          <input [formControl]="nameType" [(ngModel)]="type" type="radio" value="Barge" (click)="select($event)"
+            id="id1" checked><label for="id1">Barge</label>
+        </div>
+        <div>
+          <input [formControl]="nameType" [(ngModel)]="type" type="radio" value="Cargo" (click)="select($event)"
+            id="id2"><label for="id2">Cargo</label>
+        </div>
+        <div>
+          <input [formControl]="nameType" [(ngModel)]="type" type="radio" value="High Speed Craft"
+            (click)="select($event)" id="id3"><label for="id3">High Speed Craft</label>
+        </div>
+        <div>
+          <input [formControl]="nameType" [(ngModel)]="type" type="radio" value="Tug" (click)="select($event)"
+            id="id4"><label for="id4">Tug</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
